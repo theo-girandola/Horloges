@@ -6,7 +6,7 @@ namespace Horloges
     class Program
     {
         static int[] Heures= {2, 4, 3, 9, 1, 7, 8, 6, 5, 12, 50, 0, 11};
-        static string[] HeuresEnLettres = { "DEUX\n", "QUATRE", "TROIS\n", "NEUF", "UNE", "SEPT\n", "HUIT", "SIX", "CINQ\n", "MIDI", "X", "MINUIT\n", "ONZE" };//Changer x minuit
+        static string[] HeuresEnLettres = { "DEUX\n", "QUATRE", "TROIS\n", "NEUF", "UNE", "SEPT\n", "HUIT", "SIX", "CINQ\n", "MIDI", "X", "MINUIT\n", "ONZE" };
 
 
 
@@ -221,7 +221,8 @@ namespace Horloges
 
         static void Main(string[] args)
         {
-            int heure = DateTime.Now.Hour;
+            int heure = 12;
+                //DateTime.Now.Hour;
             if (heure > 12)
             {
                 heure -= 12;
