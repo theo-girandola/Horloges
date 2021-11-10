@@ -8,7 +8,7 @@ namespace menu
         public static void ShowItems(int selected)
         {
             int indexSelectionned=selected;
-            Console.WriteLine("MENU PRINCIPALE\n\n");
+            Console.WriteLine("MENU PRINCIPAL\n\n");
             for (int compteur = 0; compteur < menu.Length; compteur++)
             {
                 if (compteur == indexSelectionned)
