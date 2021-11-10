@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Horloges", "Horloges\Horloges.csproj", "{98682193-2D3D-46EA-BCCA-42015A880F3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Horloges", "Horloges\Horloges.csproj", "{98682193-2D3D-46EA-BCCA-42015A880F3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableauBulle", "TableauBulle\TableauBulle.csproj", "{FD77307B-F395-467E-8C0F-4CE2972DEE45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TableauBulle", "TableauBulle\TableauBulle.csproj", "{FD77307B-F395-467E-8C0F-4CE2972DEE45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciceFinDeCycle", "ExerciceFinDeCycle\ExerciceFinDeCycle.csproj", "{62281827-BFC8-4975-93FA-783528903DF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciceFinDeCycle", "ExerciceFinDeCycle\ExerciceFinDeCycle.csproj", "{62281827-BFC8-4975-93FA-783528903DF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "menu", "menu\menu.csproj", "{3F0BCB4E-EB49-4832-8EC7-F48D21D6750F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "menu", "menu\menu.csproj", "{3F0BCB4E-EB49-4832-8EC7-F48D21D6750F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "couleurs", "couleurs\couleurs.csproj", "{A59F6723-68D2-48CB-ACFB-84B635CD6154}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "couleurs", "couleurs\couleurs.csproj", "{A59F6723-68D2-48CB-ACFB-84B635CD6154}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClearConsole", "ClearConsole\ClearConsole.csproj", "{CDC10B43-5C13-4175-ACD3-F835B1785472}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionDesTouches", "GestionDesTouches\GestionDesTouches.csproj", "{677E4BD6-9E90-458F-ADF3-084166BB3F30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{A59F6723-68D2-48CB-ACFB-84B635CD6154}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A59F6723-68D2-48CB-ACFB-84B635CD6154}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A59F6723-68D2-48CB-ACFB-84B635CD6154}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDC10B43-5C13-4175-ACD3-F835B1785472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDC10B43-5C13-4175-ACD3-F835B1785472}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDC10B43-5C13-4175-ACD3-F835B1785472}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDC10B43-5C13-4175-ACD3-F835B1785472}.Release|Any CPU.Build.0 = Release|Any CPU
+		{677E4BD6-9E90-458F-ADF3-084166BB3F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{677E4BD6-9E90-458F-ADF3-084166BB3F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{677E4BD6-9E90-458F-ADF3-084166BB3F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{677E4BD6-9E90-458F-ADF3-084166BB3F30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
