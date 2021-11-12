@@ -221,7 +221,7 @@ namespace Horloges
 
         static void Main(string[] args)
         {
-            while()
+            
             int heure = DateTime.Now.Hour;
             if (heure > 12)
             {

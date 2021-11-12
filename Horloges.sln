@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestionDesTouches", "Gestio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Actualiser avec une boucle", "Actualiser avec une boucle\Actualiser avec une boucle.csproj", "{9DA13E70-716F-476F-A988-8A0765977661}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrieABulleTEST", "TrieABulleTEST\TrieABulleTEST.csproj", "{D020E4EE-B996-41FB-B4D6-38C1CAB0ACD6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "date test", "date test\date test.csproj", "{CFFC7480-99E2-443D-B762-2CD5831C0303}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,10 +59,10 @@ Global
 		{9DA13E70-716F-476F-A988-8A0765977661}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DA13E70-716F-476F-A988-8A0765977661}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DA13E70-716F-476F-A988-8A0765977661}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D020E4EE-B996-41FB-B4D6-38C1CAB0ACD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D020E4EE-B996-41FB-B4D6-38C1CAB0ACD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D020E4EE-B996-41FB-B4D6-38C1CAB0ACD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D020E4EE-B996-41FB-B4D6-38C1CAB0ACD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFFC7480-99E2-443D-B762-2CD5831C0303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFFC7480-99E2-443D-B762-2CD5831C0303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFFC7480-99E2-443D-B762-2CD5831C0303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFFC7480-99E2-443D-B762-2CD5831C0303}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
