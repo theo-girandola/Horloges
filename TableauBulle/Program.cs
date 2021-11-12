@@ -28,11 +28,11 @@ namespace TableauBulle
         static void Main(string[] args)
         {
             Random generateurDeNombreAleatoires = new Random();
-            
+
             int[] tableauNonTrier = new int[generateurDeNombreAleatoires.Next(5, 50)];
             for (int compteur = 0; compteur < tableauNonTrier.Length; compteur++)
             {
-                tableauNonTrier[compteur] = generateurDeNombreAleatoires.Next(0, tableauNonTrier.Length*10);
+                tableauNonTrier[compteur] = generateurDeNombreAleatoires.Next(0, tableauNonTrier.Length * 10);
             }
 
 
@@ -45,24 +45,29 @@ namespace TableauBulle
 
 
 
-            int[] tableauTrier = tableauNonTrier;
-            for (int compteur = 0; compteur < tableauNonTrier.Length-1; compteur++)
+
+            for (int i = tableauNonTrier.Length-2; i >= 0; i--)
             {
-                if (tableauTrier[compteur] > tableauTrier[compteur + 1])
+                for (int j = 1; j <= i; j++)
                 {
-                    int temp = tableauTrier[compteur];
-                    tableauTrier[compteur] = tableauTrier[compteur + 1];
-                    tableauTrier[compteur + 1] = temp;
-                    compteur = -1;
+                    if (tableauNonTrier[j - 1] > tableauNonTrier[j])
+                    {
+                        int temp = tableauNonTrier[j - 1];
+                        tableauNonTrier[j - 1] = tableauNonTrier[j];
+                        tableauNonTrier[j] = temp;
+
+
+
+
+
+                        
+                    }
                 }
             }
-
-
-
-
-
             Console.Write("Tableau Trié: ");
-            AffichageDuTableau(tableauTrier);
+            AffichageDuTableau(tableauNonTrier);
+
+
         }
     }
 }
