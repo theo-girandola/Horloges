@@ -1,34 +1,21 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Timers;
 
-public class Example
+class Example
 {
-    private static System.Timers.Timer aTimer;
-
-    public static void Main()
+    static void Main()
     {
-        SetTimer();
-
-        
-        Console.ReadLine();
-        aTimer.Stop();
-        aTimer.Dispose();
-
-        Console.WriteLine("Terminating the application...");
+        Timer timer = new Timer(1000);
+        timer.Elapsed += async (sender, e) => await HandleTimer();
+        timer.Start();
+        Console.Write("Press any key to exit... ");
+        Console.ReadKey();
     }
 
-    private static void SetTimer()
+    private static Task HandleTimer()
     {
-        
-        aTimer = new System.Timers.Timer(1000);
-        aTimer.Elapsed += OnTimedEvent;
-        aTimer.AutoReset = true;
-        aTimer.Enabled = true;
-    }
-
-    private static void OnTimedEvent(Object source, ElapsedEventArgs e)
-    {
-        Console.WriteLine("{0:HH:mm:ss}",
-                          e.SignalTime);
+        Console.WriteLine("\nHandler not implemented...");
+        throw new NotImplementedException();
     }
 }

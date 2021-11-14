@@ -1,29 +1,17 @@
 ﻿using System;
-using System.Reflection.Emit;
-using System.Timers;
 
+using System.Threading.Tasks;
+using System.Timers;
 namespace Horloges
 {
     class Program
     {
+
         static int[] Heures= {2, 4, 3, 9, 1, 7, 8, 6, 5, 12, 50, 0, 11};
         static string[] HeuresEnLettres = { "DEUX\n", "QUATRE", "TROIS\n", "NEUF", "UNE", "SEPT\n", "HUIT", "SIX", "CINQ\n", "MIDI", "X", "MINUIT\n", "ONZE" };
-        private static System.Timers.Timer aTimer;
 
-
-
-        private static void SetTimer()
+        public static Task HandleTimer()
         {
-           
-            aTimer = new System.Timers.Timer(1000);
-            aTimer.Elapsed += OnTimedEvent;
-            
-            
-        }
-
-        private static void OnTimedEvent(Object source, ElapsedEventArgs e)
-        {
-            Console.Clear();
             int heure = DateTime.Now.Hour;
             if (heure > 12)
             {
@@ -41,11 +29,8 @@ namespace Horloges
             TiretMinute(minute);
             CinqMinute(minute);
             EtDemiMinute(minute);
-
-            Console.WriteLine("{0:HH:mm:ss}",
-                              e.SignalTime);
+            throw new NotImplementedException();
         }
-
         public static void IlEst()
         {
             Console.ForegroundColor = ConsoleColor.White;
@@ -246,19 +231,24 @@ namespace Horloges
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write("DEMI");
                 Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.Write("EPAN\n");
+                Console.Write("EPAN");
             }
             else
             {
                 Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.Write("O\nETSDEMIEPAN\n");
+                Console.Write("O\nETSDEMIEPAN");
             }
         }
 
         static void Main(string[] args)
         {
-            SetTimer();
-     
+            Timer timer = new Timer(1000);
+            timer.Elapsed += async (sender, e) => await HandleTimer();
+            timer.Start();
+            Console.Write("Press any key to exit... \n");
+            Console.ReadKey();
+
+            
         }
     }
 }
