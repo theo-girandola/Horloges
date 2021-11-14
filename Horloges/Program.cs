@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection.Emit;
+using System.Timers;
 
 namespace Horloges
 {
@@ -7,8 +8,43 @@ namespace Horloges
     {
         static int[] Heures= {2, 4, 3, 9, 1, 7, 8, 6, 5, 12, 50, 0, 11};
         static string[] HeuresEnLettres = { "DEUX\n", "QUATRE", "TROIS\n", "NEUF", "UNE", "SEPT\n", "HUIT", "SIX", "CINQ\n", "MIDI", "X", "MINUIT\n", "ONZE" };
+        private static System.Timers.Timer aTimer;
 
 
+
+        private static void SetTimer()
+        {
+           
+            aTimer = new System.Timers.Timer(1000);
+            aTimer.Elapsed += OnTimedEvent;
+            
+            
+        }
+
+        private static void OnTimedEvent(Object source, ElapsedEventArgs e)
+        {
+            Console.Clear();
+            int heure = DateTime.Now.Hour;
+            if (heure > 12)
+            {
+                heure -= 12;
+            }
+            int minute = DateTime.Now.Minute;
+            IlEst();
+            Heure(heure, minute);
+            HeuresAffich(heure);
+            MoinsMinute(minute);
+            LeMinute(minute);
+            DixMinute(minute);
+            EtQuartMinute(minute);
+            vingthMinute(minute);
+            TiretMinute(minute);
+            CinqMinute(minute);
+            EtDemiMinute(minute);
+
+            Console.WriteLine("{0:HH:mm:ss}",
+                              e.SignalTime);
+        }
 
         public static void IlEst()
         {
@@ -210,35 +246,19 @@ namespace Horloges
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write("DEMI");
                 Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.Write("EPAN");
+                Console.Write("EPAN\n");
             }
             else
             {
                 Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.Write("O\nETSDEMIEPAN");
+                Console.Write("O\nETSDEMIEPAN\n");
             }
         }
 
         static void Main(string[] args)
         {
-            
-            int heure = DateTime.Now.Hour;
-            if (heure > 12)
-            {
-                heure -= 12;
-            }
-            int minute = DateTime.Now.Minute;
-            IlEst();
-            Heure(heure, minute);
-            HeuresAffich(heure);
-            MoinsMinute(minute);
-            LeMinute(minute);
-            DixMinute(minute);
-            EtQuartMinute(minute);
-            vingthMinute(minute);
-            TiretMinute(minute);
-            CinqMinute(minute);
-            EtDemiMinute(minute);
+            SetTimer();
+     
         }
     }
 }
