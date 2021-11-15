@@ -350,10 +350,10 @@ namespace ExerciceFinDeCycle
                 DateTime date1 = DateTime.Now;
                 Console.WriteLine(date1);
                 Thread.Sleep(1000);
-                if (Console.ReadKey() != null)
+                if (Console.KeyAvailable==true)
                 {
-                    Console.Clear();
-                    MenuBase();
+                    break;
+                    
                 }
             }
         }
@@ -361,6 +361,8 @@ namespace ExerciceFinDeCycle
         public static void item1()
         {
             Horloge();
+            Console.Clear();
+            MenuBase();
         }
         public static void item2()
         {
@@ -372,12 +374,18 @@ namespace ExerciceFinDeCycle
             Console.Clear();
             Environment.Exit(0);
         }
+        public static void item4()
+        {
+            TriABulle();
+
+        }
         public static void MenuBase()
         {
-            menu = new string[3];
-            menu[0] = "] : Afiiche l'horloge";
-            menu[1] = "] : Trie a bulle d'un tableau";
-            menu[2] = "] : Quitter";
+            menu = new string[4];
+            menu[0] = "] : Affiche l'horloge";
+            menu[1] = "] : Tri à bulle d'un tableau";
+            menu[2] = "] : Tour de Hanoi";
+            menu[3] = "] : Quitter";
 
             int select = 0;
             ShowItems(select);
@@ -426,6 +434,13 @@ namespace ExerciceFinDeCycle
                         if (select == 2)
                         {
                             item3();
+                        }
+                        else
+                        {
+                            if (select == 3)
+                            {
+                                item4();
+                            }
                         }
                     }
                 }
