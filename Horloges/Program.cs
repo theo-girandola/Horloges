@@ -1,36 +1,17 @@
 ﻿using System;
+using System.Reflection.Emit;
+using System.Threading;
+using System.ServiceProcess;
 
-using System.Threading.Tasks;
-using System.Timers;
 namespace Horloges
 {
     class Program
     {
-
         static int[] Heures= {2, 4, 3, 9, 1, 7, 8, 6, 5, 12, 50, 0, 11};
         static string[] HeuresEnLettres = { "DEUX\n", "QUATRE", "TROIS\n", "NEUF", "UNE", "SEPT\n", "HUIT", "SIX", "CINQ\n", "MIDI", "X", "MINUIT\n", "ONZE" };
+        
 
-        public static Task HandleTimer()
-        {
-            int heure = DateTime.Now.Hour;
-            if (heure > 12)
-            {
-                heure -= 12;
-            }
-            int minute = DateTime.Now.Minute;
-            IlEst();
-            Heure(heure, minute);
-            HeuresAffich(heure);
-            MoinsMinute(minute);
-            LeMinute(minute);
-            DixMinute(minute);
-            EtQuartMinute(minute);
-            vingthMinute(minute);
-            TiretMinute(minute);
-            CinqMinute(minute);
-            EtDemiMinute(minute);
-            throw new NotImplementedException();
-        }
+
         public static void IlEst()
         {
             Console.ForegroundColor = ConsoleColor.White;
@@ -85,6 +66,13 @@ namespace Horloges
                     Console.Write("HEURES");
                 }
 
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.DarkGray;
+                Console.Write("R");
+                Console.ForegroundColor = ConsoleColor.DarkGray;
+                Console.Write("HEURES");
             }
         }
 
@@ -231,23 +219,46 @@ namespace Horloges
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write("DEMI");
                 Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.Write("EPAN");
+                Console.Write("EPAN\n");
             }
             else
             {
                 Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.Write("O\nETSDEMIEPAN");
+                Console.Write("O\nETSDEMIEPAN\n");
             }
         }
 
         static void Main(string[] args)
         {
-            Timer timer = new Timer(1000);
-            timer.Elapsed += async (sender, e) => await HandleTimer();
-            timer.Start();
-            Console.Write("Press any key to exit... \n");
-            Console.ReadKey();
+            
+            while (true)
+            {
+                Console.Clear();
+                int heure = DateTime.Now.Hour;
+                if (heure > 12)
+                {
+                    heure -= 12;
+                }
+                int minute = DateTime.Now.Minute;
+                IlEst();
+                Heure(heure, minute);
+                HeuresAffich(heure);
+                MoinsMinute(minute);
+                LeMinute(minute);
+                DixMinute(minute);
+                EtQuartMinute(minute);
+                vingthMinute(minute);
+                TiretMinute(minute);
+                CinqMinute(minute);
+                EtDemiMinute(minute);
+                DateTime date1= DateTime.Now;
+                Console.WriteLine(date1);
+                Thread.Sleep(1000);
+                if (Console.ReadKey()!= null)
+                {
 
+                }
+            }
             
         }
     }
